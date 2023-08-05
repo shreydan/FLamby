@@ -1,8 +1,11 @@
 import numpy as np
 from sklearn.metrics import f1_score
 
-def metric(predictions,gt):
-    predictions = np.argmax(predictions,axis=1).flatten()
-    gt = gt.flatten()
-    f1 = f1_score(y_true=gt,y_pred=predictions)
-    return f1
+def metric(y_true, y_pred):
+    y_pred = np.argmax(y_pred,axis=1).flatten()
+    # The try except is needed because when the metric is batched some batches \
+    # have one class only
+    try:
+        return f1_score(y_true, y_pred)
+    except ValueError:
+        return np.nan
