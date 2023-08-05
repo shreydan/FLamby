@@ -17,6 +17,7 @@ def main(args_cli):
         "fed_lidc_idri",
         "fed_heart_disease",
         "fed_tcga_brca",
+        "fed_covid19"
     ]
 
     csv_files = args_cli.path_to_results
