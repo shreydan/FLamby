@@ -4,7 +4,7 @@ from flamby.datasets.fed_covid19.dataset import FedCovid19
 
 NUM_CLIENTS = 7
 BATCH_SIZE = 4
-NUM_EPOCHS_POOLED = 10
+NUM_EPOCHS_POOLED = 1
 LR = 1e-3
 Optimizer = torch.optim.Adam
 
