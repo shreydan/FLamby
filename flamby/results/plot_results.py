@@ -29,6 +29,7 @@ strategies_names = [
     "FedAdagrad",
     "FedYogi",
     "FedAdam",
+    "FedAvgFineTuning"
 ]
 # Filtering only 100 updates strategies
 strategies = [strat + str(100) for strat in strategies_names]
@@ -46,6 +47,7 @@ dirs_multiple_seeds = [
     os.path.join(dir_path, "results_benchmark_fed_kits19"),
     os.path.join(dir_path, "results_benchmark_fed_isic2019"),
     os.path.join(dir_path, "results_benchmark_fed_heart_disease"),
+    os.path.join(dir_path, "results_benchmark_fed_covid19"),
 ]
 for dir in dirs_multiple_seeds:
     csv_files = [os.path.join(dir, f) for f in os.listdir(dir)]
@@ -87,6 +89,7 @@ METRICS_NAMES = {
     "fed_kits19": "DICE",
     "fed_isic2019": "Balanced Accuracy",
     "fed_heart_disease": "Accuracy",
+    "fed_covid19": "F1 Score"
 }
 palette = sns.color_palette("mako", 14)
 for idx, (ax, res, name) in enumerate(zip(flattened_axs, results, dataset_names)):
@@ -185,6 +188,7 @@ for idx, (ax, res, name) in enumerate(zip(flattened_axs, results, dataset_names)
         "fed_kits19": "Fed-KITS2019",
         "fed_isic2019": "Fed-ISIC2019",
         "fed_heart_disease": "Fed-Heart-Disease",
+        "fed_covid19": "Fed-COVID-19"
     }
     current_title = title_dicts[name]
     ax.set_title(current_title, fontsize=45, fontweight="heavy")
