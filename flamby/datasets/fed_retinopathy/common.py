@@ -2,6 +2,7 @@ import torch
 
 from flamby.datasets.fed_retinopathy.dataset import FedRetinopathy
 
+# 0: aptos 1: eyepacs
 NUM_CLIENTS = 2
 BATCH_SIZE = 64
 NUM_EPOCHS_POOLED = 10
