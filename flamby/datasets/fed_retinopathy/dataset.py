@@ -62,5 +62,5 @@ class FedRetinopathy:
         im = np.array(Image.open(im).convert('RGB'))
         aug = self.tfms(image=im)
         im = aug['image']
-        label = torch.tensor([label]).long()
+        label = torch.tensor(label).long()
         return im,label
