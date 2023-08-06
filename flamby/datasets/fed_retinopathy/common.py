@@ -2,7 +2,7 @@ import torch
 
 from flamby.datasets.fed_retinopathy.dataset import FedRetinopathy
 
-NUM_CLIENTS = 7
+NUM_CLIENTS = 2
 BATCH_SIZE = 64
 NUM_EPOCHS_POOLED = 10
 LR = 1e-3
