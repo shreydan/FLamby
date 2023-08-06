@@ -33,12 +33,6 @@ class FedRetinopathy:
             ToTensorV2()
         ])
         self.tfms = train_transforms if train else val_transforms
-
-        if center == 0:
-            self.base = Path('/kaggle/input/aptos2019-blindness-detection/train_images').resolve()
-        else:
-            self.base = Path('/kaggle/input/eyepacspreprocess/eyepacs_preprocess/eyepacs_preprocess').resolve()
-        
         
         self.df_path = Path(__file__).parent / 'diabetic_retinopathy_splits.csv'
         df = pd.read_csv(self.df_path)
@@ -55,10 +49,9 @@ class FedRetinopathy:
         
     def _make_dict(self,cases):
         client_dicts = []
-        base = self.base
         for i in range(len(cases)):
             client_dicts.append({
-                'image': base / f"{cases.loc[i,'image']}",
+                'image': f"{cases.loc[i,'kaggle_path']}",
                 'label': int(cases.loc[i,'level'])
             })
         return client_dicts
