@@ -1,4 +1,4 @@
-from flamby.datasets.fed_covid19.common import (
+from flamby.datasets.fed_retinopathy.common import (
     BATCH_SIZE,
     LR,
     NUM_CLIENTS,
@@ -7,7 +7,7 @@ from flamby.datasets.fed_covid19.common import (
     get_nb_max_rounds,
     FedClass,
 )
-from flamby.datasets.fed_covid19.dataset import FedCovid19
-from flamby.datasets.fed_covid19.metric import metric
-from flamby.datasets.fed_covid19.model import Baseline
-from flamby.datasets.fed_covid19.loss import BaselineLoss
+from flamby.datasets.fed_retinopathy.dataset import FedRetinopathy
+from flamby.datasets.fed_retinopathy.metric import metric
+from flamby.datasets.fed_retinopathy.model import Baseline
+from flamby.datasets.fed_retinopathy.loss import BaselineLoss
