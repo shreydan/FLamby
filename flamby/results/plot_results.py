@@ -89,7 +89,7 @@ METRICS_NAMES = {
     "fed_kits19": "DICE",
     "fed_isic2019": "Balanced Accuracy",
     "fed_heart_disease": "Accuracy",
-    "fed_covid19": "F1 Score"
+    # "fed_covid19": "F1 Score"
 }
 palette = sns.color_palette("mako", 14)
 for idx, (ax, res, name) in enumerate(zip(flattened_axs, results, dataset_names)):
