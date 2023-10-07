@@ -1,14 +1,14 @@
 import torch
 
-from flamby.datasets.fed_cifar10.dataset import FedCIFAR10
+from flamby.datasets.fed_cifar10.dataset import FedCifar10
 
 NUM_CLIENTS = 10
 BATCH_SIZE = 16
-NUM_EPOCHS_POOLED = 1
+NUM_EPOCHS_POOLED = 10
 LR = 1e-3
 Optimizer = torch.optim.Adam
 
-FedClass = FedCIFAR10
+FedClass = FedCifar10
 
 def get_nb_max_rounds(num_updates, batch_size=BATCH_SIZE):
     # setting num_updates=100

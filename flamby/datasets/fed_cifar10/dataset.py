@@ -8,15 +8,15 @@ from pathlib import Path
 
 
 
-class FedCIFAR10:
+class FedCifar10:
     def __init__(self,center=0,train=True,pooled=False):
         self.center = center
         self.split = 'train' if train else 'test'
         self.pooled = pooled
         train_transforms = A.Compose([
-            A.RandomScale(0.1),
-            A.RandomBrightnessContrast(0.15, 0.1),
-            A.HorizontalFlip(p=0.5),
+            #A.RandomScale(0.1),
+            #A.RandomBrightnessContrast(0.15, 0.1),
+            #A.HorizontalFlip(p=0.5),
             A.Resize(224, 224),
             A.Normalize(always_apply=True),
             ToTensorV2()
@@ -42,7 +42,7 @@ class FedCIFAR10:
         
     def _make_dict(self,cases):
         client_dicts = []
-        base = Path('REPLACE').resolve()
+        base = Path('/data2/Shreyas').resolve()
         for i in range(len(cases)):
             client_dicts.append({
                 'image': base / f"{cases.loc[i,'image']}",
@@ -56,5 +56,5 @@ class FedCIFAR10:
         im = np.array(Image.open(im).convert('RGB'))
         aug = self.tfms(image=im)
         im = aug['image']
-        label = torch.tensor([label]).float()
+        label = torch.tensor(label).long()
         return im,label

@@ -506,3 +506,5 @@ events.out.tfevents.*
 
 # License agreements should not be tracked
 flamby/datasets/*/dataset_creation_scripts/license_agreement*
+
+.venv
