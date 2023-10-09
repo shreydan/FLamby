@@ -48,6 +48,7 @@ dirs_multiple_seeds = [
     os.path.join(dir_path, "results_benchmark_fed_isic2019"),
     os.path.join(dir_path, "results_benchmark_fed_heart_disease"),
     os.path.join(dir_path, "results_benchmark_fed_covid19"),
+    os.path.join(dir_path, "results_benchmark_fed_cifar10")
 ]
 for dir in dirs_multiple_seeds:
     csv_files = [os.path.join(dir, f) for f in os.listdir(dir)]
@@ -89,7 +90,8 @@ METRICS_NAMES = {
     "fed_kits19": "DICE",
     "fed_isic2019": "Balanced Accuracy",
     "fed_heart_disease": "Accuracy",
-    # "fed_covid19": "F1 Score"
+    "fed_cifar10": "Accuracy",
+    "fed_covid19": "F1 Score"
 }
 palette = sns.color_palette("mako", 14)
 for idx, (ax, res, name) in enumerate(zip(flattened_axs, results, dataset_names)):
