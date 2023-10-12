@@ -60,6 +60,7 @@ class Isic2019Raw(torch.utils.data.Dataset):
             input_path = data_path
 
         dir = str(Path(os.path.realpath(__file__)).parent.resolve())
+        input_path = "/data2/Shreyas/isic/isic2019_dataset" # override
         self.dic = {
             "input_preprocessed": os.path.join(
                 input_path, "ISIC_2019_Training_Input_preprocessed"

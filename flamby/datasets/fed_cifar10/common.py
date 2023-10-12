@@ -3,8 +3,8 @@ import torch
 from flamby.datasets.fed_cifar10.dataset import FedCifar10
 
 NUM_CLIENTS = 10
-BATCH_SIZE = 16
-NUM_EPOCHS_POOLED = 10
+BATCH_SIZE = 64
+NUM_EPOCHS_POOLED = 30
 LR = 1e-3
 Optimizer = torch.optim.Adam
 

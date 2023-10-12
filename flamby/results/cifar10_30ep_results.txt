@@ -1,0 +1,16 @@
+Training Method
+Client 0       0.547026
+Client 1       0.669686
+Client 2       0.450524
+Client 3       0.600888
+Client 4       0.565854
+Client 5       0.571913
+Client 6       0.641934
+Client 7       0.493313
+Client 8       0.598376
+Client 9       0.481657
+FedAvg100      0.666414
+FedProx100     0.640990
+Pooled         0.843049
+Scaffold100    0.560331
+Name: Metric, dtype: float64

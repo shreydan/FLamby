@@ -40,7 +40,7 @@ strategies_names = [
 strategies = [strat + str(100) for strat in strategies_names]
 current_methods = (
         ["Pooled Training"]
-        + ["Local " + str(i) for i in range(6)]
+        + ["Local " + str(i) for i in range(10)]
         + strategies
     )
 res = res.loc[res["Method"].isin(current_methods)]
