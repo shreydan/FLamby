@@ -7,5 +7,10 @@ class Baseline(nn.Module):
         self.model = resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
         self.model.fc = nn.Linear(self.model.fc.in_features, num_classes)
 
+        for p in self.model.parameters():
+            p.requires_grad=False
+        for p in self.model.fc.parameters():
+            p.requires_grad=True
+
     def forward(self,x):
         return self.model(x)
