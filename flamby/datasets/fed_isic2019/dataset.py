@@ -60,7 +60,6 @@ class Isic2019Raw(torch.utils.data.Dataset):
             input_path = data_path
 
         dir = str(Path(os.path.realpath(__file__)).parent.resolve())
-        input_path = "/data2/Shreyas/isic/isic2019_dataset" # override
         self.dic = {
             "input_preprocessed": os.path.join(
                 input_path, "ISIC_2019_Training_Input_preprocessed"
@@ -140,17 +139,18 @@ class FedIsic2019(Isic2019Raw):
         data_path: str = None,
     ):
         """Cf class docstring"""
-        sz = 200
+        sz = 224
         if train:
             augmentations = albumentations.Compose(
                 [
-                    albumentations.RandomScale(0.07),
-                    albumentations.Rotate(50),
-                    albumentations.RandomBrightnessContrast(0.15, 0.1),
-                    albumentations.Flip(p=0.5),
-                    albumentations.Affine(shear=0.1),
-                    albumentations.RandomCrop(sz, sz),
-                    albumentations.CoarseDropout(random.randint(1, 8), 16, 16),
+                    #albumentations.RandomScale(0.07),
+                    #albumentations.Rotate(50),
+                    #albumentations.RandomBrightnessContrast(0.15, 0.1),
+                    #albumentations.Flip(p=0.5),
+                    #albumentations.Affine(shear=0.1),
+                    #albumentations.RandomResizedCrop(sz, sz),
+                    #albumentations.CoarseDropout(random.randint(1, 8), 16, 16),
+		    albumentations.CenterCrop(sz,sz),
                     albumentations.Normalize(always_apply=True),
                 ]
             )

@@ -9,16 +9,16 @@ dataset_names = []
 dirs_multiple_seeds = [
 #     os.path.join(dir_path, "results_benchmark_fed_camelyon16"),
 #     os.path.join(dir_path, "results_benchmark_fed_lidc_idri"),
-    os.path.join(dir_path, "results_benchmark_fed_cifar10"),
+#    os.path.join(dir_path, "results_benchmark_fed_cifar10"),
 #     os.path.join(dir_path, "results_benchmark_fed_tcga_brca"),
 #     os.path.join(dir_path, "results_benchmark_fed_kits19"),
-#     os.path.join(dir_path, "results_benchmark_fed_isic2019"),
+     os.path.join(dir_path, "results_benchmark_fed_isic2019"),
 #     os.path.join(dir_path, "results_benchmark_fed_heart_disease"),
 #     os.path.join(dir_path, "results_benchmark_fed_covid19"),
 ]
 for dir in dirs_multiple_seeds:
     csv_files = [os.path.join(dir, f) for f in os.listdir(dir)]
-    result_pds = [pd.read_csv(f) for f in csv_files]
+    result_pds = [pd.read_csv(f) for f in csv_files if os.path.isfile(f)]
     df = pd.concat(result_pds, ignore_index=True)
     results.append(df)
     dataset_names.append("_".join(dir.split("/")[-1].split(".")[0].split("_")[2:]))
