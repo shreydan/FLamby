@@ -34,6 +34,7 @@ class FedRetinopathy:
         ])
         self.tfms = train_transforms if train else val_transforms
         
+        self.ds_path = Path('/data2/Shreyas/data/')
         self.df_path = Path(__file__).parent / 'diabetic_retinopathy_splits.csv'
         df = pd.read_csv(self.df_path)
         main_cases = df.query(f"split == '{self.split}'").reset_index(drop=True)
@@ -50,8 +51,10 @@ class FedRetinopathy:
     def _make_dict(self,cases):
         client_dicts = []
         for i in range(len(cases)):
+            ds_name = cases.loc[i,'dataset']
+            image_path = self.ds_path / ds_name / cases.iloc[i,'image']
             client_dicts.append({
-                'image': f"{cases.loc[i,'kaggle_path']}",
+                'image': str(image_path.resolve()),
                 'label': int(cases.loc[i,'level'])
             })
         return client_dicts
