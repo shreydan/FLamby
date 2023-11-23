@@ -7,7 +7,7 @@ from flamby.datasets.fed_fmnist.common import (
     get_nb_max_rounds,
     FedClass,
 )
-from flamby.datasets.fed_fmnist.dataset import FedfMnist
+from flamby.datasets.fed_fmnist.dataset import FedFmnist
 from flamby.datasets.fed_fmnist.metric import metric
 from flamby.datasets.fed_fmnist.model import Baseline
 from flamby.datasets.fed_fmnist.loss import BaselineLoss

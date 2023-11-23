@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 
-class FedFMnist:
+class FedFmnist:
     def __init__(self,center=0,train=True,pooled=False):
         self.center = center
         self.split = 'train' if train else 'test'
@@ -40,7 +40,7 @@ class FedFMnist:
         
     def _make_dict(self,cases):
         client_dicts = []
-        base = Path('.').resolve()
+        base = Path('/data2/Shreyas/FLamby/flamby/datasets/fed_fmnist').resolve()
         for i in range(len(cases)):
             client_dicts.append({
                 'image': base / f"{cases.loc[i,'path']}",
