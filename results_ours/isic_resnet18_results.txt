@@ -1,0 +1,76 @@
+WITH ALL AUGMENTATIONS
+
+Training Method
+Client 0         0.389401
+Client 1         0.290352
+Client 2         0.400614
+Client 3         0.250305
+Client 4         0.300844
+Client 5         0.242155
+Cyclic100        0.371051
+FedAdagrad100    0.118989
+FedAdam100       0.101786
+FedAvg100        0.228322
+FedProx100       0.274627
+FedYogi100       0.199008
+Pooled           0.628728
+Scaffold100      0.078857
+Name: Metric, dtype: float64
+
+WITH NO AUGMENTATIONS (just center-crop)
+
+Training Method
+Client 0         0.467623
+Client 1         0.333499
+Client 2         0.486637
+Client 3         0.325832
+Client 4         0.273652
+Client 5         0.262817
+Cyclic100        0.406468
+FedAdagrad100    0.215865
+FedAdam100       0.127661
+FedAvg100        0.173269
+FedProx100       0.115902
+FedYogi100       0.093523
+Pooled           0.655182
+Scaffold100      0.148537
+Name: Metric, dtype: float64
+
+
+WITH NO AUGMENTATIONS + ONLY HEAD WAS TRAINABLE
+
+Training Method
+Client 0         0.436805
+Client 1         0.300374
+Client 2         0.426507
+Client 3         0.343183
+Client 4         0.299334
+Client 5         0.254789
+Cyclic100        0.448299
+FedAdagrad100    0.291619
+FedAdam100       0.467064
+FedAvg100        0.505857
+FedProx100       0.486512
+FedYogi100       0.466625
+Pooled           0.543271
+Scaffold100      0.486466
+Name: Metric, dtype: float64
+
+NO AUGS, 45 frozen modules
+Training Method
+Client 0         0.467915
+Client 1         0.313490
+Client 2         0.480024
+Client 3         0.340343
+Client 4         0.298250
+Client 5         0.232826
+Cyclic100        0.443944
+FedAdagrad100    0.458188
+FedAdam100       0.555645
+FedAvg100        0.539502
+FedProx100       0.552722
+FedYogi100       0.551828
+Pooled           0.656110
+Scaffold100      0.548015
+Name: Metric, dtype: float64
+

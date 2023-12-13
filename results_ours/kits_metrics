@@ -1,0 +1,52 @@
+/data2/Shreyas/SPLIT_LEARNING/medical_split_learning/Datasets/kits19/models/pretrained/best_new_model.pth
+
+
+key-value refresh per 5 epochs - dynamic
+::::::::::::::::::::BEST METRICS::::::::::::::::::::
+1236 Training Mean Dice Score:  tensor(0.6295)
+1237 Maximum Test Mean Dice Score:  tensor(0.8033)
+1238 RUNNING INFERENCE from the best models on test dataset
+1239 inference score hbrp: 0.5174318552017212
+1240 inference score oig9: 0.7837492823600769
+1241 inference score f2cb: 0.7798299789428711
+1242 inference score fno7: 0.6016451716423035
+1243 inference score b0m9: 0.7200565338134766
+1244 inference score 1o3r: 0.7714428305625916 
+
+
+no key-value refresh - dynamic
+:::::::::::::::::::BEST METRICS::::::::::::::::::::
+Training Mean Dice Score:  tensor(0.6508)
+Maximum Test Mean Dice Score:  tensor(0.5469)
+RUNNING INFERENCE from the best models on test dataset
+inference score hbrp: 0.4915439188480377
+inference score oig9: 0.783456027507782
+inference score f2cb: 0.7611082196235657
+inference score fno7: 0.6041269898414612
+inference score b0m9: 0.7174794673919678
+inference score 1o3r: 0.7846322059631348
+
+
+key value refresh per 5 epochs - dynamic : harsher augmentations
+:::::::::::::::::::BEST METRICS::::::::::::::::::::
+Training Mean Dice Score:  tensor(0.6827)
+Maximum Test Mean Dice Score:  tensor(0.6671)
+RUNNING INFERENCE from the best models on test dataset
+inference score hbrp: 0.5218924880027771
+inference score oig9: 0.7940072417259216
+inference score f2cb: 0.8067627549171448
+inference score fno7: 0.6292374730110168
+inference score b0m9: 0.7631169557571411
+inference score 1o3r: 0.802757740020752
+
+key value refresh per 5 epochs - disabled dynamic i.e. no random augmentations
+::::::::::::::::::::BEST METRICS::::::::::::::::::::
+Training Mean Dice Score:  tensor(0.7018)
+Maximum Test Mean Dice Score:  tensor(0.6939)
+RUNNING INFERENCE from the best models on test dataset
+inference score hbrp: 0.5194912552833557
+inference score oig9: 0.81705242395401
+inference score f2cb: 0.830852210521698
+inference score fno7: 0.6608352065086365
+inference score b0m9: 0.7481619119644165
+inference score 1o3r: 0.8214389681816101

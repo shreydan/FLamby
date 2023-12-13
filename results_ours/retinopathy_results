@@ -1,0 +1,43 @@
+DIabetic Retinopathy
+clients: 10 0-4: aptos, 5-9: eyepacs
+metric: balanced accuracy
+
+NO AUG - Resnet18 - frozen till layer46
+
+Training Method
+Client 0       0.516276
+Client 1       0.596891
+Client 2       0.545719
+Client 3       0.541180
+Client 4       0.526022
+Client 5       0.513341
+Client 6       0.521128
+Client 7       0.537538
+Client 8       0.450406
+Client 9       0.527634
+FedAvg100      0.404150
+FedProx100     0.404177
+Pooled         0.654162
+Scaffold100    0.464105
+Name: Metric, dtype: float64
+
+
+NO AUG - Resnet18 - only last layer trainable
+
+Training Method
+Client 0       0.537930
+Client 1       0.477661
+Client 2       0.522048
+Client 3       0.538982
+Client 4       0.502978
+Client 5       0.467141
+Client 6       0.475522
+Client 7       0.488271
+Client 8       0.444153
+Client 9       0.464297
+FedAvg100      0.420662
+FedProx100     0.420662
+Pooled         0.607889
+Scaffold100    0.438910
+Name: Metric, dtype: float64
+

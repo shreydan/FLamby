@@ -1,0 +1,23 @@
+cifar10 flamby
+
+python fed_benchmark.py -cfp ../config_cifar10.json -rfp ../results/results_benchmark_fed_cifar10/results_42_30epochs_frozen.csv --log --seed 42
+
+isic2019 flamby
+
+python fed_benchmark.py -cfp ../config_isic2019.json -rfp ../results/results_benchmark_fed_isic2019/results_42_20ep_frozen.csv --log --seed 42
+
+isic path
+/data2/Shreyas/isic
+
+trainer.py -c 6 -bs 2 -tbs 2 -n 30 --client_lr 6e-4 --server_lr 6e-4 --dataset kits19 --seed 42 --model nnunet --split 3 -kv --kv_refresh_rate 5 --kv_factor 1 --dynamic --wandb
+
+trainer.py -c 6 -bs 2 -tbs 2 -n 30 --client_lr 6e-4 --server_lr 6e-4 --dataset kits19 --seed 42 --model nnunet --split 3 -kv --kv_refresh_rate 5 --kv_factor 1 --wandb
+
+
+ixi tiny path
+
+/data2/Shreyas/SPLIT_LEARNING/data/ixitiny/ixi_tiny
+
+retinopathy path
+/data2/Shreyas/data
+	- eyepacs,aptos
