@@ -5,7 +5,7 @@ from flamby.datasets.fed_retinopathy.dataset import FedRetinopathy
 # 0-4: aptos 5-9: eyepacs
 NUM_CLIENTS = 10
 BATCH_SIZE = 64
-NUM_EPOCHS_POOLED = 1
+NUM_EPOCHS_POOLED = 20
 LR = 1e-3
 Optimizer = torch.optim.Adam
 

@@ -14,21 +14,21 @@ class FedRetinopathy:
         self.split = 'train' if train else 'test'
         self.pooled = pooled
         train_transforms = A.Compose([
-            A.Resize(265,265),
-            A.RandomScale(0.1),
-            A.HueSaturationValue(5,15,10),
-            A.Blur(blur_limit=3),
-            A.CLAHE(),
-            A.OpticalDistortion(),
-            A.RandomBrightnessContrast(0.15, 0.1),
-            A.HorizontalFlip(p=0.5),
-            A.CenterCrop(224, 224),
+            A.Resize(224,224),
+            #A.RandomScale(0.1),
+            #A.HueSaturationValue(5,15,10),
+            #A.Blur(blur_limit=3),
+            #A.CLAHE(),
+            #A.OpticalDistortion(),
+            #A.RandomBrightnessContrast(0.15, 0.1),
+            #A.HorizontalFlip(p=0.5),
+            #A.CenterCrop(224, 224),
             A.Normalize(always_apply=True),
             ToTensorV2()
         ])
         val_transforms = A.Compose([
-            A.Resize(265,265),
-            A.CenterCrop(224,224),
+            A.Resize(224,224),
+            #A.CenterCrop(224,224),
             A.Normalize(always_apply=True),
             ToTensorV2()
         ])
@@ -51,8 +51,8 @@ class FedRetinopathy:
     def _make_dict(self,cases):
         client_dicts = []
         for i in range(len(cases)):
-            ds_name = cases.loc[i,'dataset']
-            image_path = self.ds_path / ds_name / cases.iloc[i,'image']
+            ds_name = cases.loc[i,'dataset_name']
+            image_path = self.ds_path / ds_name / cases.loc[i,'image']
             client_dicts.append({
                 'image': str(image_path.resolve()),
                 'label': int(cases.loc[i,'level'])

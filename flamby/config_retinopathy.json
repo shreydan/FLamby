@@ -1,20 +1,20 @@
 {
-  "dataset": "fed_retinopathy",
-  "results_file": "results_retino42.csv",
-  "strategies": {
-    "FedAvg": {
-      "learning_rate": 0.01,
-      "optimizer_class": "torch.optim.SGD"
-    },
-    "FedProx": {
-      "learning_rate": 0.01,
-      "mu": 0.001,
-      "optimizer_class": "torch.optim.SGD"
-    },
-    "Scaffold": {
-      "learning_rate": 0.01,
-      "optimizer_class": "torch.optim.SGD",
-      "server_learning_rate": 1.0
+    "dataset": "fed_retinopathy",
+    "results_file": "results_isic42.csv",
+    "strategies": {
+        "FedAvg": {
+            "learning_rate": 0.01,
+            "optimizer_class": "torch.optim.SGD"
+        },
+        "FedProx": {
+            "learning_rate": 0.01,
+            "mu": 0.001,
+            "optimizer_class": "torch.optim.SGD"
+        },
+        "Scaffold": {
+            "learning_rate": 0.01,
+            "optimizer_class": "torch.optim.SGD",
+            "server_learning_rate": 1.0
+        }
     }
-  }
 }

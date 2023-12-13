@@ -1,6 +1,8 @@
 import numpy as np
-from sklearn.metrics import cohen_kappa_score
+from sklearn import metrics
 
-def metric(y_true, y_pred):
-    y_pred = np.argmax(y_pred,axis=1).flatten()
-    return cohen_kappa_score(y1=y_true,y2=y_pred,labels=list(range(3)),weights='quadratic')
+
+def metric(y_true, logits):
+    y_true = y_true.reshape(-1)
+    preds = np.argmax(logits, axis=1)
+    return metrics.balanced_accuracy_score(y_true, preds)
