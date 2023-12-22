@@ -566,5 +566,5 @@ class Baseline(nn.Module):
         )
     def forward(self, x):
         x = self.model(x)
-        x = F.softmax(dim=1)
+        x = F.softmax(x,dim=1)
         return x
