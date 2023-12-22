@@ -60,7 +60,7 @@ class IXITinyRaw(Dataset):
         )
 
         # pd.read_csv('./metadata/metadata_tiny.csv')
-        self.common_shape = (48, 60, 48)
+        self.common_shape = (96, 96, 96)
         self.transform = transform
         self.modality = "T1"
 
