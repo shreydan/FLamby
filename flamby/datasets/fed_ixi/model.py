@@ -2,7 +2,7 @@
 
 # import torch
 # import torch.nn as nn
-# import torch.nn.functional as F
+import torch.nn.functional as F
 
 # """
 # https://pypi.org/project/unet/0.7.7/
@@ -565,4 +565,6 @@ class Baseline(nn.Module):
             norm=Norm.BATCH
         )
     def forward(self, x):
-        return self.model(x)
+        x = self.model(x)
+        x = F.softmax(dim=1)
+        return x
