@@ -3,16 +3,16 @@
   "results_file": "results_ixi42.csv",
   "strategies": {
     "FedAvg": {
-      "learning_rate": 0.001,
+      "learning_rate": 0.002,
       "optimizer_class": "torch.optim.SGD"
     },
     "FedProx": {
-      "learning_rate": 0.001,
+      "learning_rate": 0.002,
       "mu": 0.1,
       "optimizer_class": "torch.optim.SGD"
     },
     "Scaffold": {
-      "learning_rate": 0.001,
+      "learning_rate": 0.002,
       "optimizer_class": "torch.optim.SGD",
       "server_learning_rate": 1.0
     }
